@@ -7,12 +7,12 @@ from reportlab.lib import colors
 # Define categories with their color schemes
 CATEGORIES = {
     "Minerals & Fossils": {
-        "color": colors.Color(0.4, 0.4, 0.8),  # Blue-purple
+        "color": colors.Color(0.6, 0.6, 0.9),  # Lighter blue-purple
         "text_color": colors.white,
-        "gradient_start": colors.Color(0.5, 0.5, 0.9),
-        "gradient_end": colors.Color(0.7, 0.7, 1.0),
-        "border_color": colors.Color(0.3, 0.3, 0.7),
-        "pattern_color": colors.Color(0.5, 0.5, 0.9, 0.1),
+        "gradient_start": colors.Color(0.7, 0.7, 1.0),
+        "gradient_end": colors.Color(0.85, 0.85, 1.0),
+        "border_color": colors.Color(0.5, 0.5, 0.8),
+        "pattern_color": colors.Color(0.7, 0.7, 1.0, 0.1),
     },
     "Shells & Marine": {
         "color": colors.Color(0.2, 0.7, 0.7),  # Turquoise

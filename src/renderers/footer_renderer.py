@@ -30,7 +30,7 @@ class FooterRenderer:
         )
         
         # Draw social media text
-        social_text = "Share your discovery journey with us on social media using #InsectAsylumCollection"
+        social_text = "Share your discovery journey with us on social media @TheInsectAsylum"
         social_width = self.canvas.stringWidth(social_text, footer_font, 11)
         
         self.canvas.drawString(

@@ -1,5 +1,5 @@
 """
-src/scavenger_hunt/renderers/checkbox_renderer.py
+src/renderers/checkbox_renderer.py
 Checkbox renderer for scavenger hunt
 """
 from reportlab.lib import colors
@@ -14,9 +14,9 @@ class CheckboxRenderer:
         """Draw a checkbox."""
         self.canvas.saveState()
         
-        # Draw the box
+        # Draw the box with slightly thicker lines for better visibility
         self.canvas.setStrokeColor(colors.black)
-        self.canvas.setLineWidth(0.5)
+        self.canvas.setLineWidth(0.75)  # Increased from 0.5 for better visibility
         self.canvas.rect(
             x, y, 
             size, size, 
