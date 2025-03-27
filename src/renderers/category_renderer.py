@@ -4,6 +4,7 @@ Category renderer for scavenger hunt
 """
 from reportlab.lib import colors
 from categories import get_category_colors
+from font_manager import FontManager
 
 class CategoryRenderer:
     """Renders category sections with headers and items for the scavenger hunt."""
@@ -58,8 +59,14 @@ class CategoryRenderer:
         
         # Draw category name
         self.canvas.setFillColor(color_scheme["text_color"])
-        self.canvas.setFont("DejaVuSans-Bold", 14)
-        text_y = y - self.layout.category_header_height + 18
+        category_font = FontManager.get_category_font(category)
+        font_size = 14
+        self.canvas.setFont(category_font, font_size)
+        
+        # Calculate vertical centering for text
+        text_height = font_size * 0.75  # Approximate height of text
+        text_y = y - (self.layout.category_header_height / 2) - (text_height / 2)
+        
         self.canvas.drawString(x + 10, text_y, f"{emoji}  {category}")
         
         # Draw accent corners
@@ -128,6 +135,7 @@ class CategoryRenderer:
     def _draw_items(self, x, y, items, checkbox_renderer):
         """Draw all items for a category with checkboxes."""
         total_height = 0
+        item_font = FontManager.get_item_font()
         
         for i, item in enumerate(items):
             item_y = y - (i * self.layout.item_height)
@@ -140,7 +148,7 @@ class CategoryRenderer:
             )
             
             # Draw item text
-            self.canvas.setFont("DejaVuSans", 10)
+            self.canvas.setFont(item_font, 10)
             self.canvas.setFillColor(colors.black)
             self.canvas.drawString(
                 x + self.layout.item_indent + self.layout.checkbox_text_offset,
