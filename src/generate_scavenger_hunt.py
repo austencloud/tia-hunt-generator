@@ -2,7 +2,9 @@
 src/generate_scavenger_hunt.py
 Main entry point for the specimen scavenger hunt generator
 """
-from scavenger_hunt.hunt_generator import ScavengerHuntGenerator
+
+from hunt_generator import ScavengerHuntGenerator
+
 
 def main():
     """Run the scavenger hunt generator."""

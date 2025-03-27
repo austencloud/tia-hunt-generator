@@ -5,18 +5,17 @@ Main generator class for specimen scavenger hunt
 import os
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
-
-from card_layout import CardLayout
-from categories import CATEGORIES, get_category_colors
 from font_manager import FontManager
+from hunt_layout import HuntLayout
+
 from items import ITEMS
-from scavenger_hunt.hunt_layout import HuntLayout
-from scavenger_hunt.renderers.background_renderer import BackgroundRenderer
-from scavenger_hunt.renderers.header_renderer import HeaderRenderer
-from scavenger_hunt.renderers.category_renderer import CategoryRenderer
-from scavenger_hunt.renderers.checkbox_renderer import CheckboxRenderer
-from scavenger_hunt.renderers.footer_renderer import FooterRenderer
-from scavenger_hunt.renderers.corner_renderer import CornerRenderer
+from renderers.corner_renderer import CornerRenderer
+from renderers.footer_renderer import FooterRenderer
+from renderers.header_renderer import HeaderRenderer
+from renderers.background_renderer import BackgroundRenderer 
+from renderers.category_renderer import CategoryRenderer
+from renderers.checkbox_renderer import CheckboxRenderer
+
 
 
 class ScavengerHuntGenerator:
